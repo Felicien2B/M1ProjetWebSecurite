@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 08 oct. 2022 à 15:10
+-- Généré le : Dim 09 oct. 2022 à 15:05
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -92,6 +92,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(18) NOT NULL AUTO_INCREMENT,
   `mail_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
+  `pwd_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
   `nom_user` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `prenom_user` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `adresse_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
@@ -99,7 +100,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `ville_user` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `description_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id_user`, `mail_user`, `pwd_user`, `nom_user`, `prenom_user`, `adresse_user`, `code_postal_user`, `ville_user`, `description_user`) VALUES
+(1, 'abc.def@gmail.com', 'testabc', 'aaa', 'aaa', 'aaa', 20000, 'aaa', 'aaa');
 
 --
 -- Contraintes pour les tables déchargées
