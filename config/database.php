@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+require 'db_config.php';
 
 // Connexion à la base de données
 static $bdd = null;
