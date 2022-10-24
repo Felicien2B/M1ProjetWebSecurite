@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
       <input type="password" name="pwd_user" placeholder="Mot de passe" required>
     </div>
       <button type="submit" value="Login">Login</button>
+      <a href="inscription.php">Créer un nouveau compte</a>
     </div>
     <br>
   </form>

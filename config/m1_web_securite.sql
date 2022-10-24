@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : Dim 09 oct. 2022 à 15:05
+-- Généré le : lun. 17 oct. 2022 à 14:44
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -95,8 +95,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pwd_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
   `nom_user` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `prenom_user` varchar(100) COLLATE utf8mb4_bin NOT NULL,
+  `tel_user` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `adresse_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
-  `code_postal_user` int(5) NOT NULL,
+  `code_postal_user` varchar(50) COLLATE utf8mb4_bin NOT NULL,
   `ville_user` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `description_user` varchar(500) COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id_user`)
@@ -106,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id_user`, `mail_user`, `pwd_user`, `nom_user`, `prenom_user`, `adresse_user`, `code_postal_user`, `ville_user`, `description_user`) VALUES
-(1, 'abc.def@gmail.com', 'testabc', 'aaa', 'aaa', 'aaa', 20000, 'aaa', 'aaa');
+INSERT INTO `user` (`id_user`, `mail_user`, `pwd_user`, `nom_user`, `prenom_user`, `tel_user`, `adresse_user`, `code_postal_user`, `ville_user`, `description_user`) VALUES
+(1, 'abc.def@gmail.com', 'testabc', 'aaa', 'aaa', '0612345678', 'aaa', '20000', 'aaa', 'aaa');
 
 --
 -- Contraintes pour les tables déchargées
