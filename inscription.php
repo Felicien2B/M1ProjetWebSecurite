@@ -17,9 +17,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	$ville_user=$_POST["ville_user"];
   $description_user=$_POST["description_user"];
 
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
   $sql = $bdd->prepare("INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$sql->execute(array(NULL, $mail_user, $password, $nom_user, $prenom_user, $tel_user, $adresse_user, $cp_user, $ville_user, $description_user));
+	$sql->execute(array(NULL, $mail_user, $hashed_password, $nom_user, $prenom_user, $tel_user, $adresse_user, $cp_user, $ville_user, $description_user));
 
 }
 $bdd = null;

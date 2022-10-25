@@ -9,15 +9,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 	$mail_user=$_POST["mail_user"];
 	$password=$_POST["pwd_user"];
+  
 
 
-	$sql="SELECT * FROM user WHERE mail_user='$mail_user' AND pwd_user='$password'";
+	$sql="SELECT * FROM user WHERE mail_user='$mail_user'";
 
 	$result=$bdd->query($sql);
 
 	$row=$result->fetch(PDO::FETCH_ASSOC);
 
-	if(!empty($row["id_user"]))
+	if(!empty($row["id_user"]) && password_verify($password, $row["pwd_user"]))
 	{
 		$_SESSION["mail_user"]=$mail_user;
 
