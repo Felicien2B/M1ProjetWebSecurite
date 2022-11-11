@@ -1,9 +1,10 @@
-<?php 
+<?php
+require_once(ROOT.'config/db_config.php');
 abstract class Model{
     //information de connexion a la BDD
-    private $dsn ="mysql:host=localhost;dbname=facebook;charset=utf8";
-    private $username = "root";
-    private $password = "";
+    private $dsn = 'mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME . ';charset=utf8';
+    private $username = DB_USER;
+    private $password = DB_PWD;
 
 
 

@@ -33,21 +33,21 @@ class Profile extends Controller
             if($result)
             {
                 $_SESSION["message"] = "Profile edited succesefuly";
-                header("Location: http://localhost/mini-facebook/profile");
+                header("Location: /profile");
                 $_SESSION["firstname"] = $firstname;
                 $_SESSION["lastname"]  = $lastname;
             }
             else
             {
                 $_SESSION["error"] = "Oops, there was trouble while trying to update your profile";
-                header("Location: http://localhost/mini-facebook/profile/complete");
+                header("Location: /profile/complete");
             }
             
         }
         else
         {
             $_SESSION["error"] = "please enter all fields !";
-            header("Location: http://localhost/mini-facebook/profile/complete");
+            header("Location: /profile/complete");
         }
       
     
@@ -66,7 +66,7 @@ class Profile extends Controller
                 if($filesize > 200000)
                 {
                     $_SESSION["error"] = "image too large limited size 200KB";
-                    header("Location: http://localhost/mini-facebook/profile/index");
+                    header("Location: /profile/index");
                 }
                 else 
                 {
@@ -86,19 +86,19 @@ class Profile extends Controller
                             //pic added to db with success
                             $_SESSION["message"] = "profile picture added with success !";
                             $_SESSION["url_profile"] = $new_file_name;
-                            header("Location: http://localhost/mini-facebook/profile/index");
+                            header("Location: /profile/index");
                         }
                         else 
                         {
                             $_SESSION["error"] = "Oops, there was a trouble adding the picture to db";
-                            header("Location: http://localhost/mini-facebook/profile/index");
+                            header("Location: /profile/index");
                         }
 
                     }
                     else
                     {
                         $_SESSION["error"]="submitted extension is not allowed, only jpg, jpeg and png";
-                        header("Location: http://localhost/mini-facebook/profile/index");
+                        header("Location: /profile/index");
                     }
                 }
             }
@@ -106,7 +106,7 @@ class Profile extends Controller
         else
         {
             $_SESSION["error"] = "No file inserted, please insert image";
-            header("Location: http://localhost/mini-facebook/profile/index");
+            header("Location: /profile/index");
         }
     }
 
@@ -124,7 +124,7 @@ class Profile extends Controller
                 if($filesize > 200000)
                 {
                     $_SESSION["error"] = "image too large limited size 200KB";
-                    header("Location: http://localhost/mini-facebook/profile/index");
+                    header("Location: /profile/index");
                 }
                 else 
                 {
@@ -143,20 +143,20 @@ class Profile extends Controller
                         {
                             //pic added to db with success
                             $_SESSION["message"] = "profile picture updated with success !";
-                            header("Location: http://localhost/mini-facebook/profile/index");
+                            header("Location: /profile/index");
                             $_SESSION["url_profile"] = $new_file_name;
                         }
                         else 
                         {
                             $_SESSION["error"] = "Oops, there was a trouble updating your profile picture";
-                            header("Location: http://localhost/mini-facebook/profile/index");
+                            header("Location: /profile/index");
                         }
 
                     }
                     else
                     {
                         $_SESSION["error"]="submitted extension is not allowed, only jpg, jpeg and png";
-                        header("Location: http://localhost/mini-facebook/profile/index");
+                        header("Location: /profile/index");
                     }
                 }
             }
@@ -164,7 +164,7 @@ class Profile extends Controller
         else
         {
             $_SESSION["error"] = "No file inserted, please insert image";
-            header("Location: http://localhost/mini-facebook/profile/index");
+            header("Location: /profile/index");
         }
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/mini-facebook/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>SocialBook</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
                     <img src="assets/inbox.png" alt="inbox">
                 </li>
                 <li>
-                    <a href="http://localhost/mini-facebook/home"><img src="assets/video.png" alt="video"></a>
+                    <a href="/home"><img src="assets/video.png" alt="video"></a>
                 </li>
             </ul>
         </div>
@@ -34,7 +34,7 @@
             <p>
             <strong>Hello <?=$fullUserName?></strong></p>
             <button>
-                <a href="http://localhost/mini-facebook/auth/logout">Logout</a>
+                <a href="/auth/logout">Logout</a>
             </button>
         </div>
         <div class="nav-right">
@@ -43,9 +43,9 @@
                 <input type="text" placeholder="search">
             </div>
             <div class="nav-user-icon online">
-                <a href="http://localhost/mini-facebook/profile/index">
+                <a href="/profile/index">
                     <?php if(isset($_SESSION["url_profile"])) { ?>
-                    <img src="/mini-facebook/profile/<?=$_SESSION["url_profile"]?>">
+                    <img src="/profile/<?=$_SESSION["url_profile"]?>">
                     <?php } else { ?>
                     <img src="assets/profile.jpg">
                     <?php } ?>
@@ -87,7 +87,7 @@
         <div class="main-content">
             <div class="story-galery">
                 <div class="story">
-                    <img src="/mini-facebook/assets/upload.png">
+                    <img src="/assets/upload.png">
                     <?php isset($fullUserName)? $name=$fullUserName : $name=""?>
                     <p><?=$name?></p>
                 </div>
@@ -95,9 +95,9 @@
             <div class="write-post">
                 <div class="user-profile">
                     <?php if(isset($_SESSION["url_profile"])) { ?>
-                    <img src="/mini-facebook/profile/<?=$_SESSION["url_profile"]?>">
+                    <img src="/profile/<?=$_SESSION["url_profile"]?>">
                     <?php } else { ?>
-                    <img src="/mini-facebook/assets/profile.jpg">
+                    <img src="/assets/profile.jpg">
                     <?php } ?>
                     <div>
                         <p> <?php isset($fullUserName)? $name=$fullUserName : $name=$_SESSION["username"] ?>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="post-input">
-                <form method="POST" action="http://localhost/mini-facebook/post/addnew" enctype="multipart/form-data">
+                <form method="POST" action="/post/addnew" enctype="multipart/form-data">
                     <?php if(isset($_SESSION["firstname"])) { ?>
                     <textarea name="post" rows="5" placeholder="what's on your Mind, <?=$_SESSION["firstname"]?>?"></textarea>
                     <?php } else { ?>
@@ -116,13 +116,13 @@
                     <input type="file" name="uploadfile">
                     <div class="add-post-links">
                         <a href="">
-                            <img src="/mini-facebook/assets/live-video.png">Live/vidéo
+                            <img src="/assets/live-video.png">Live/vidéo
                         </a>
                         <a href="">
-                            <img src="/mini-facebook/assets/photo.png">Photo
+                            <img src="/assets/photo.png">Photo
                         </a>
                         <a href="">
-                            <img src="/mini-facebook/assets/feeling.png">feeling/activity
+                            <img src="/assets/feeling.png">feeling/activity
                         </a>
                         <button type="submit" name="submitpost">Add Post</button>
                     </div>
@@ -135,9 +135,9 @@
             <?php foreach($posts as $post) {  ?>
                 <div class="user-profile">
                     <?php if(isset($post["profile_pic"])) { ?>
-                    <img src="/mini-facebook/profile/<?=$post["profile_pic"]?>">
+                    <img src="/profile/<?=$post["profile_pic"]?>">
                     <?php } else { ?>
-                    <img src="/mini-facebook/assets/profile.jpg">
+                    <img src="/assets/profile.jpg">
                     <?php } ?>
                     <div>
                         <p> <?php $fullUserName = $post["first_name"]." ".$post["last_name"];
@@ -149,16 +149,16 @@
                 </div>
                 <p class="post-text"><?=$post["post_text"]?></p>
                 <?php if(isset($post["post_img"]) & strlen($post["post_img"])>1) { ?>
-                    <img src="/mini-facebook/storage/<?=$post["post_img"]?>" class="post-img">
+                    <img src="/storage/<?=$post["post_img"]?>" class="post-img">
                 <?php } ?>
                 <div class="post-comments">
                     <?php if(isset($_SESSION["url_profile"])) { ?>
-                    <img src="/mini-facebook/profile/<?=$_SESSION["url_profile"]?>">
+                    <img src="/profile/<?=$_SESSION["url_profile"]?>">
                     <?php } else { ?>
-                    <img src="/mini-facebook/assets/profile.jpg">
+                    <img src="/assets/profile.jpg">
                     <?php } ?>
                     <div>
-                    <form method="POST" action="http://localhost/mini-facebook/comment/add/<?=$post["id"]?>">
+                    <form method="POST" action="/comment/add/<?=$post["id"]?>">
                     <input type="text" name="comment" id="comment" placeholder="type your comment here" autocomplete="off">
                     <button type="submit">add comment</button>
                     </form>

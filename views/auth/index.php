@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/mini-facebook/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Authentication Page</title>
 </head>
 <body>
     <nav>
         <div class="nav-left">
-            <img class="logo" src="/mini-facebook/assets/zozor.png" alt="logo">
+            <img class="logo" src="/assets/zozor.png" alt="logo">
             <h4>Social Network</h4>
         </div>
         <div class="register-button">
             <p>You don't have an account !</p>
             <button>
-                <a href="http://localhost/mini-facebook/auth/register">Register Here</a>
+                <a href="/auth/register">Register Here</a>
             </button>
         </div>
     </nav>
     <div class="container">
-        <form class="auth-form" method="POST" action="http://localhost/mini-facebook/auth/login">
+        <form class="auth-form" method="POST" action="/auth/login">
             <p class="error-display">
             <?php isset($_SESSION["message"]) ? $message = $_SESSION["message"] : $message="" ?>
             <?php if(isset($_SESSION["error"]))

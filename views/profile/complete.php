@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/mini-facebook/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Complete My Profile</title>
 </head>
 <body>
     <nav>
         <div class="nav-left">
-            <img class="logo" src="/mini-facebook/assets/zozor.png" alt="logo">
+            <img class="logo" src="/assets/zozor.png" alt="logo">
             <ul>
                 <li>
-                    <img src="/mini-facebook/assets/notification.png" alt="">
+                    <img src="/assets/notification.png" alt="">
                 </li>
                 <li>
-                    <img src="/mini-facebook/assets/inbox.png" alt="">
+                    <img src="/assets/inbox.png" alt="">
                 </li>
                 <li>
-                    <a href="http://localhost/mini-facebook/home"><img src="/mini-facebook/assets/video.png" alt="video"></a>
+                    <a href="/home"><img src="/assets/video.png" alt="video"></a>
                 </li>
             </ul>
         </div>
@@ -32,16 +32,16 @@
                 <?=$hello?>
             </strong></p>
             <button>
-                <a href="http://localhost/mini-facebook/auth/logout">Logout</a>
+                <a href="/auth/logout">Logout</a>
             </button>
         </div>
         <div class="nav-right">
             <div class="search-box">
-                <img src="/mini-facebook/assets/search.png" alt="search">
+                <img src="/assets/search.png" alt="search">
                 <input type="text" placeholder="search">
             </div>
             <div class="nav-user-icon online">
-                <a href="http://localhost/mini-facebook/profile"><img  src="/mini-facebook/assets/profile.jpg" alt="image-profil"></a>
+                <a href="/profile"><img  src="/assets/profile.jpg" alt="image-profil"></a>
             </div>
         </div>
     </nav>
@@ -54,7 +54,7 @@
             }?>
         </p>
         <div class="complete-profile">
-            <form method="POST" action="http://localhost/mini-facebook/profile/handleComplete">
+            <form method="POST" action="/profile/handleComplete">
                 <label for="firstname">Your First Name</label>
                 <input type="text" id="firstname" name="firstname">
                 <label for="lastname">Your last Name</label>

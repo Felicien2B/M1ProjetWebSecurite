@@ -6,7 +6,7 @@ class Home extends Controller
     {
         if(!isset($_SESSION["firstname"]) & !isset($_SESSION["lastname"]) )
         {
-            header("Location: http://localhost/mini-facebook/profile/index");
+            header("Location: /profile/index");
         }
         else
         {
@@ -25,13 +25,13 @@ class Home extends Controller
                 else
                 {
                     $_SESSION["error"] = "there was trouble with loading comments associated with posts";
-                    header("Location: http://localhost/mini-facebook/home");
+                    header("Location: /home");
                 }
             }
             else
             {
                 $_SESSION["error"] = "there was trouble with loading posts";
-                header("Location: http://localhost/mini-facebook/home");
+                header("Location: /home");
             }
 
         }

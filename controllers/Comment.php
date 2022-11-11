@@ -14,18 +14,18 @@ class Comment extends Controller
             if($result)
             {
                 $_SESSION["message"] = "comment added with success";
-                header("Location: http://localhost/mini-facebook/home");
+                header("Location: /home");
             }
             else
             {
                 $_SESSION["error"] = "failed to add comment";
-                header("Location: http://localhost/mini-facebook/home");
+                header("Location: /home");
             }
         }
         else 
         {
             $_SESSION["error"] = "please enter a valid comment, empty strings are not allowed !";
-            header("Location: http://localhost/mini-facebook/home");
+            header("Location: /home");
         }
          
     }

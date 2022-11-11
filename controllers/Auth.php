@@ -19,7 +19,7 @@ class Auth extends Controller
         {
             //if missing data redirect to the form page with error message
             $_SESSION["error"]="all fields are required !";
-            header("Location:  http://localhost/mini-facebook/auth/register");
+            header("Location: /auth/register");
         }
         else
         {
@@ -43,18 +43,18 @@ class Auth extends Controller
                     $_SESSION["username"] = $email;
                     $_SESSION["message"] = "registred succesefuly type in your credentials to login";
                     //redirect to home page
-                    header("Location: http://localhost/mini-facebook/auth/index");
+                    header("Location: /auth/index");
                 }
                 else
                 {
                     $_SESSION["error"] = "Oops, there was something wrong with request !";
-                    header("Location: http://localhost/mini-facebook/auth/register");
+                    header("Location: /auth/register");
                 }
             }
             else
             {
                 $_SESSION["error"]="your confirmation password doesn't match the password !";
-                header("Location: http://localhost/mini-facebook/auth/register");
+                header("Location: /auth/register");
             }
         }
     }
@@ -96,28 +96,28 @@ class Auth extends Controller
                     }
                     //redirect the user to profile page to complete insription 
                     
-                    header("Location: http://localhost/mini-facebook/profile/index");
+                    header("Location: /profile/index");
                     
                 }
                 else
                 {
                     $_SESSION["error"] = "the given credentials don't match our records, please verify your data";
                     //redirect back to the home page
-                    header("Location: http://localhost/mini-facebook/auth/index");
+                    header("Location: /auth/index");
                 }
             }
             else
             {
                 $_SESSION["error"] = "the given credentials don't match our records";
                 //redirect back to the home page
-                header("Location: http://localhost/mini-facebook/auth/index");
+                header("Location: /auth/index");
             }
 
         }
         else 
         {
             $_SESSION["error"] = "please enter all fields !";
-            header("Location: http://localhost/mini-facebook/auth/index");
+            header("Location: /auth/index");
         }
 
     }
@@ -127,7 +127,7 @@ class Auth extends Controller
         
         //unset all session variables and redirect to the welcome page
         session_destroy();
-        header("Location: http://localhost/mini-facebook/auth");
+        header("Location: /auth");
     }
 }
 ?>

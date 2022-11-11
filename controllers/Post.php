@@ -22,7 +22,7 @@ class Post extends Controller
                     if($filesize > 200000)
                     {
                         $_SESSION["error"] = "sorry your file is too large";
-                        header("Location: http://localhost/mini-facebook/home ");
+                        header("Location: /home ");
                     }
                     else
                     {
@@ -40,18 +40,18 @@ class Post extends Controller
                             if($result)
                             {
                                 $_SESSION["message"] = "post added succesefuly !";
-                                header("Location: http://localhost/mini-facebook/home");
+                                header("Location: h/home");
                             }
                             else 
                             {
                                 $_SESSION["error"] = "image saved to storage file but failded to store to db";
-                                header("Location: http://localhost/mini-facebook/home");
+                                header("Location: /home");
                             }
                         }
                         else
                         {
                             $_SESSION["error"] ="you can't load files with that format";
-                            header("Location: http://localhost/mini-facebook/home");
+                            header("Location: /home");
                         }
 
                     }
@@ -61,7 +61,7 @@ class Post extends Controller
                 {
                     //redirect back with error message 
                     $_SESSION["error"] ="Oops, sorry something went wrong !";
-                    header("Location: http://localhost/mini-facebook/home");
+                    header("Location: /home");
                 }
         
 
@@ -74,12 +74,12 @@ class Post extends Controller
                 if($result)
                 {
                     $_SESSION["message"] = "post added succesefuly !";
-                    header("Location: http://localhost/mini-facebook/home");
+                    header("Location: /home");
                 }
                 else
                 {
                     $_SESSION["error"] = "something went wrong !";
-                    header("Location: http://localhost/mini-facebook/home");
+                    header("Location: /home");
 
                 }
 
@@ -103,7 +103,7 @@ class Post extends Controller
                     if($filesize > 200000)
                     {
                         $_SESSION["error"] = "sorry your file is too large";
-                        header("Location: http://localhost/mini-facebook/home ");
+                        header("Location: /home ");
                     }
                     else
                     {
@@ -121,18 +121,18 @@ class Post extends Controller
                             if($result)
                             {
                                 $_SESSION["message"] = "post added succesefuly !";
-                                header("Location: http://localhost/mini-facebook/home");
+                                header("Location: /home");
                             }
                             else 
                             {
                                 $_SESSION["error"] = "image saved to storage file but failded to store to db";
-                                header("Location: http://localhost/mini-facebook/home");
+                                header("Location: /home");
                             }
                         }
                         else
                         {
                             $_SESSION["error"] ="you can't load files with that format";
-                            header("Location: http://localhost/mini-facebook/home");
+                            header("Location: /home");
                         }
 
                     }
@@ -142,7 +142,7 @@ class Post extends Controller
                 {
                     //redirect back with error message 
                     $_SESSION["error"] ="Oops, sorry something went wrong !";
-                    header("Location: http://localhost/mini-facebook/home");
+                    header("Location: /home");
                 }
         
 
@@ -150,7 +150,7 @@ class Post extends Controller
             else
             {
                 $_SESSION["error"] ="empty fields are not allowed, one at least is required!";
-                header("Location: http://localhost/mini-facebook/home");
+                header("Location: /home");
 
             }
         }
