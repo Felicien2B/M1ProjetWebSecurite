@@ -135,9 +135,9 @@
             <?php foreach($posts as $post) {  ?>
                 <div class="user-profile">
                     <?php if(isset($post["profile_pic"])) { ?>
-                    <img src="/profile/<?=$post["profile_pic"]?>">
+                    <img src="/profile/<?=$post["profile_pic"]?>" loading="lazy">
                     <?php } else { ?>
-                    <img src="/assets/profile.jpg">
+                    <img src="/assets/profile.jpg" loading="lazy">
                     <?php } ?>
                     <div>
                         <p> <?php $fullUserName = $post["first_name"]." ".$post["last_name"];
@@ -149,13 +149,13 @@
                 </div>
                 <p class="post-text"><?=$post["post_text"]?></p>
                 <?php if(isset($post["post_img"]) & strlen($post["post_img"])>1) { ?>
-                    <img src="/storage/<?=$post["post_img"]?>" class="post-img">
+                    <img src="/storage/<?=$post["post_img"]?>" class="post-img" loading="lazy">
                 <?php } ?>
                 <div class="post-comments">
                     <?php if(isset($_SESSION["url_profile"])) { ?>
-                    <img src="/profile/<?=$_SESSION["url_profile"]?>">
+                    <img src="/profile/<?=$_SESSION["url_profile"]?>" loading="lazy">
                     <?php } else { ?>
-                    <img src="/assets/profile.jpg">
+                    <img src="/assets/profile.jpg" loading="lazy">
                     <?php } ?>
                     <div>
                     <form method="POST" action="/comment/add/<?=$post["id"]?>">
@@ -199,7 +199,7 @@
                 <h4>advertisement</h4>
                 <a href="">Close</a>
             </div>
-            <img src="assets/advertisement.png" class="sidebar-ads">
+            <img src="assets/advertisement.png" class="sidebar-ads" loading="lazy">
 
             <div class="sidebar-right-title">
                 <h4>Conversation</h4>
